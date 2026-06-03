@@ -1,0 +1,1 @@
+{"num_classes": 36, "model": "efficientnet_b3", "best_val_acc": 95.77893820713665, "fine_tuned": true}
