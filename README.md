@@ -352,5 +352,3 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) file for
 ## 📞 Contact
 
 For questions or support, please open an issue on GitHub.
-
-**Made with ❤️ for farmers in Pakistan**
