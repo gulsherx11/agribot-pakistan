@@ -8,10 +8,10 @@ import os
 from dotenv import load_dotenv
 from groq import Groq
 
-load_dotenv()
+# load_dotenv()
 
-# Initialize Groq client for treatment advice
-groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+# # Initialize Groq client for treatment advice
+# groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 BASE_DIR   = os.path.dirname(os.path.dirname(__file__))
 MODEL_PATH = os.path.join(BASE_DIR, "models", "disease_model.pth")
@@ -107,6 +107,13 @@ def predict_disease(image_bytes: bytes) -> dict:
 def get_treatment(crop: str, disease: str, severity: str) -> str:
     """Generate treatment advice using LLM in English and Urdu"""
     try:
+        api_key = os.getenv("GROQ_API_KEY")
+
+        if not api_key:
+            return "API key not configured"
+
+        groq_client = Groq(api_key=api_key)
+        
         prompt = f"""You are an expert agricultural advisor for Pakistani farmers.
 A farmer's {crop} plant has been detected with: {disease} (Severity: {severity})
 
