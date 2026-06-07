@@ -9,3 +9,4 @@ Pillow
 groq
 langgraph
 langchain
+python-multipart
